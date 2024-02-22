@@ -10,8 +10,8 @@ export default function App() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Countdown/>}/>    
-      <Route path='/3d' element={<SplineModel/>}/>    
+      <Route path='/SBD' element={<Countdown/>}/>    
+      <Route path='/SBD/3d' element={<SplineModel/>}/>   
     </Routes>
     </BrowserRouter>
   );

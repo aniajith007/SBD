@@ -5,8 +5,9 @@ import anim2 from './Assets/DoggyWaiting.json'
 import anim3 from './Assets/stars.json'
 import TextAnimationLoop from './TextAnimationLoop.js';
 import { TEXTS_BEF, TEXT_ON } from './Raw.js';
-import { addYears } from 'date-fns';
+import { addYears, format } from 'date-fns';
 import { useNavigate } from 'react-router-dom';
+import 'animate.css';
 
 function CountdownTimer({ targetDate }) {
   const calculateTimeUntilBirthday = () => {
@@ -91,6 +92,7 @@ function CountdownTimer({ targetDate }) {
               </span>
             </div>
           </div>}
+          {<div className='flex absolute font-poppins animate__animated animate__flash animate__infinite text-xl text-white'>{format(targetDate,"dd-MM-yyyy")}</div>}
           {days == 365 ? <Lottie
             animationData={anim}
             loop={true}

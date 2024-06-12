@@ -13,6 +13,8 @@ import { saveAs } from 'file-saver';
 import banner1 from './Assets/SBanner1.png'
 import banner2 from './Assets/SBanner3.png'
 import { TypeAnimation } from 'react-type-animation';
+import Confetti from 'react-confetti'
+import useWindowSize from 'react-use/lib/useWindowSize'
 function CountdownTimer({ targetDate }) {
   const calculateTimeUntilBirthday = () => {
     const today = new Date();
@@ -188,8 +190,13 @@ function Countdown() {
   //console.log(day,year,month,new Date())
   const targetDate = new Date(year, month - 1, day); // Feb 24, 2024
   console.log("Target date : ", targetDate)
+  const {width, height} = useWindowSize();
   return (
     <div>
+      <Confetti
+      width={width}
+      height={height}
+    />
       <CountdownTimer targetDate={targetDate} />
     </div>
   );
